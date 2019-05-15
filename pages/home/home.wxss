@@ -1,0 +1,46 @@
+page{
+  overflow: hidden;
+}
+.container-background{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -9999;
+  top: 35%;
+  background: #ff7473;
+  background: -moz-linear-gradient(45deg, #ff7473 0%, #38bbff 100%);
+  background: -webkit-linear-gradient(45deg, #ff7473 0%, #38bbff 100%);
+  background: linear-gradient(45deg, #ff7473 0%, #38bbff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7473', endColorstr='#38bbff',GradientType=1 );                             
+}
+
+text{
+  padding: 40rpx;
+  color: #fff;
+}
+.title{
+  font-size: 80rpx;
+  font-weight: 500;
+  color: #fff;
+}
+
+.introduction{
+  font-size: 30rpx;
+  font-weight: 200;
+}
+
+.btn{
+  display: block;
+  height: 80rpx;
+  width: 300rpx;
+  color: #38bbff;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 20rpx;
+  background-color: #fff;
+}
+
+.btn-hover{
+  color: #38bbff;
+  background: #fff;
+}

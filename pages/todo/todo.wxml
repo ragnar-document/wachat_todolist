@@ -1,0 +1,32 @@
+<view class='todo_container'>
+  <text class='title'>Keep</text>
+  <view>
+    <input 
+    class='todo_input' 
+    value='{{ input }}' 
+    placeholder='Write down what you need ～ ～'
+    bindinput="inputChangeHandle"
+    bindconfirm="addTodoHandle"
+    ></input>
+  </view>
+  <view class='todo_list'>
+    <view class="todo_list_item{{ item.completed ? ' completed' : '' }}" wx:for="{{todos}}"  wx:key="index" bindtap="toggleTodoHandle" data-index="{{ index }}">
+        <checkbox color='#38bbff' 
+        type="{{ item.completed ? 'success' : 'circle' }}"
+        ></checkbox>
+        <text class='item-content' >{{item.value}}</text>
+        <a class='single_close'
+           data-index="{{index}}"
+           catchtap="removeTodo"
+        ><image src='/pulic/images/closered.png'></image></a>
+    </view>
+  </view>
+  <view class='select-container'>
+    <view class='select-content'>
+      <text>All</text>
+      <text>Active</text>
+      <text>Completed</text>
+    </view>
+    <text class='allclose'>删除全选</text>
+  </view>
+</view>

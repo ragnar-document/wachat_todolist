@@ -1,0 +1,80 @@
+
+.todo_container{
+  padding: 40rpx;
+}
+
+.todo_input{
+  border-bottom:4rpx solid #38bbff;
+  padding-bottom: 4rpx;
+  padding-top: 10rpx;
+  color: #999;
+  font-size: 30rpx;
+  padding-left: 20rpx;
+}
+
+.todo_input:hover{
+  border-bottom:4rpx solid #ff7473;
+}
+
+.title{
+  font-size: 80rpx;
+  font-weight: 500;
+  color: #38bbff;
+}
+
+.single_close{
+  display: block;
+  background-size: 100%;
+  border-radius: 10rpx;
+  height: 40rpx;
+  width: 40rpx;
+}
+.todo_list{
+  padding: 40rpx;
+  margin: 40rpx 0;
+  background-color: #F0F3F5;
+  height: 100%;
+}
+
+.todo_list_item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+  margin-bottom: 20rpx; 
+  padding: 0 20rpx;
+  color: #38bbff;
+  font-size: 30rpx;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.single_close image{
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.select-container{
+  display: flex;
+  justify-content: space-between;
+  font-size: 30rpx;
+}
+
+.select-content{
+  display: flex;
+  justify-content: space-around;
+  width: 375rpx;
+  padding: 20rpx;
+  color: #888;
+}
+
+.allclose{
+  padding: 20rpx;
+  color: #888;
+}
+
+
+.todo_list .todo_list_item.completed .item-content{
+  text-decoration: line-through;
+}

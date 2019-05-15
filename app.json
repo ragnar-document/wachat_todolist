@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/todo/todo"
+  ],
+  "tabBar": {
+    "color": "#38bbff",
+    "selectedColor": "#ff7473",
+    "list": [
+      {
+        "text": "Todo",
+        "pagePath": "pages/todo/todo",
+        "iconPath": "pulic/images/todo1.png",
+        "selectedIconPath": "pulic/images/todo2.png"
+      },
+      {
+        "text": "Home",
+        "pagePath": "pages/home/home",
+        "iconPath": "pulic/images/home1.png",
+        "selectedIconPath": "pulic/images/home2.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}
