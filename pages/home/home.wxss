@@ -20,7 +20,7 @@ text{
   font-family: "Comic Sans MS"
 }
 .title{
-  font-size: 80rpx;
+  font-size: 100rpx;
   font-weight: 500;
   color: #fff;
 }

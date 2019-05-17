@@ -45,6 +45,9 @@ Page({
       leftCount: this.data.leftCount + 1,
     })
     this.save();
+    this.setData({
+      status:'1'
+    })
   },
   
   toggleTodoHandle: function (e) {
@@ -52,7 +55,7 @@ Page({
     var todos = this.data.todos
     todos[index].completed = !todos[index].completed
     this.setData({
-      todos: todos,
+      showTodo: todos,
       leftCount: this.data.leftCount + (todos[index].completed ? -1 : 1),
     })
     this.save()
@@ -63,7 +66,7 @@ Page({
     var todos = this.data.todos
     var remove = todos.splice(index, 1)[0]
     this.setData({
-      todos: todos,
+      showTodo: todos,
       leftCount: this.data.leftCount - (remove.completed ? 0 : 1),
     })
     this.save()
@@ -71,7 +74,7 @@ Page({
 
   toggleAllHandle: function (e) {
     this.data.allCompleted = !this.data.allCompleted
-    var todos = this.data.todos
+    var todos = this.data.showTodo
     for (var i = todos.length - 1; i >= 0; i--) {
       todos[i].completed = this.data.allCompleted
     }
@@ -83,7 +86,7 @@ Page({
   },
 
   clearCompletedHandle: function (e) {
-    var todos = this.data.todos
+    var todos = this.data.showTodo
     var remains = []
     for (var i = 0; i < todos.length; i++) {
       todos[i].completed || remains.push(todos[i])
@@ -105,9 +108,24 @@ Page({
     this.setData({
       status: st,
     })
+    this.showTodo();
   },
 
-
+  showTodo:function(){
+    let filter = this.data.status;
+    let showTodo = this.data.todos.filter(data => {
+      if (filter === '1') {
+        return data
+      } else if (filter === '2') {
+        return !data.completed
+      } else if (filter === '3') {
+        return data.completed
+      }
+    })
+    this.setData({
+      showTodo:showTodo
+    })
+  },
  
 
 

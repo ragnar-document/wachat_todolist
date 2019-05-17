@@ -12,11 +12,11 @@
     bindconfirm="addTodoHandle"
     ></input>
   </view>
-  <block wx:if="{{ todos.length }}">
+  <block wx:if="{{ showTodo.length }}">
     <view class='todo_list'>
       <view 
       class="todo_list_item{{ item.completed ? ' completed' : '' }}" 
-      wx:for="{{todos}}"  
+      wx:for="{{showTodo}}"  
       wx:key="index" 
       bindtap="toggleTodoHandle" 
       data-index="{{ index }}">
@@ -29,7 +29,7 @@
       </view>
     </view>
     <view class='select-container'>
-      <!-- <view class='select-content'>
+      <view class='select-content'>
         <text  
         class="{{status === '1' ? 'active' : ''}} filter" 
         bindtap='showStatus'
@@ -45,7 +45,7 @@
         bindtap='showStatus'
         data-status="3"
         >Completed</text>
-      </view> -->
+      </view>
       <text 
       class='allclose' 
       wx:if="{{ todos.length > leftCount }}" 
