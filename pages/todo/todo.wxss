@@ -1,4 +1,6 @@
-
+page{
+   font-family: "Comic Sans MS";
+}
 .todo_container{
   padding: 40rpx;
 }
@@ -9,7 +11,20 @@
   padding-top: 10rpx;
   color: #999;
   font-size: 30rpx;
-  padding-left: 20rpx;
+  padding-left: 60rpx;
+}
+
+.allselect{
+  position: absolute;
+  display: inline-block;
+  height: 40rpx;
+  width: 40rpx;
+  top:10rpx;
+  transform: rotate(180deg);
+}
+
+.allselect:hover{
+  opacity: 0.5;
 }
 
 .todo_input:hover{
@@ -32,7 +47,6 @@
 .todo_list{
   padding: 40rpx;
   margin: 40rpx 0;
-  background-color: #F0F3F5;
   height: 100%;
 }
 
@@ -46,8 +60,9 @@
   margin-bottom: 20rpx; 
   padding: 0 20rpx;
   color: #38bbff;
+  -webkit-box-shadow: 10px 11px 19px -14px rgba(0,0,0,.3);
+  box-shadow: 10px 11px 19px -14px rgba(0,0,0,.3);
   font-size: 30rpx;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
 .single_close image{
@@ -77,4 +92,33 @@
 
 .todo_list .todo_list_item.completed .item-content{
   text-decoration: line-through;
+  color: #60CA91;
+}
+
+.end_title{
+  display: block;
+  width: 100%;
+  height: 200rpx;
+  font-size: 60rpx;
+  text-align: center;
+  line-height: 30rpx;
+  color: #00da9d;
+  padding-top: 200rpx;
+}
+
+.end_content{
+  display: block;
+  width: 100%;
+  height: 200rpx;
+  font-size: 40rpx;
+  text-align: center;
+  color: #00da9d;
+  opacity: 0.5;
+}
+
+.filter{
+  color: #5d5d5d;
+}
+.active{
+  color: #38bbff;
 }

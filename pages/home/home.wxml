@@ -1,8 +1,8 @@
 <view class='container'>
   <view class='container-background'></view>
   <image class='container_img' src='/pulic/images/logo.png' ></image>
-  <text class='title'>简介</text>
-  <text class='introduction'>这是一个简单常见的待办清单</text>
+  <text class='title'>Todo List</text>
+  <text class='introduction' >简洁、美观、大方、高效</text>
   <navigator
   url='/pages/todo/todo' 
   open-type='switchTab' 

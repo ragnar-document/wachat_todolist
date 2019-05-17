@@ -17,6 +17,7 @@ page{
 text{
   padding: 40rpx;
   color: #fff;
+  font-family: "Comic Sans MS"
 }
 .title{
   font-size: 80rpx;

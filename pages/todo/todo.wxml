@@ -1,6 +1,9 @@
 <view class='todo_container'>
   <text class='title'>Keep</text>
-  <view>
+  <view style='position:relative'>
+    <a bindtap="toggleAllHandle">
+      <image class='allselect' src='/pulic/images/allselect.png'></image>
+    </a>
     <input 
     class='todo_input' 
     value='{{ input }}' 
@@ -9,24 +12,50 @@
     bindconfirm="addTodoHandle"
     ></input>
   </view>
-  <view class='todo_list'>
-    <view class="todo_list_item{{ item.completed ? ' completed' : '' }}" wx:for="{{todos}}"  wx:key="index" bindtap="toggleTodoHandle" data-index="{{ index }}">
-        <checkbox color='#38bbff' 
-        type="{{ item.completed ? 'success' : 'circle' }}"
-        ></checkbox>
-        <text class='item-content' >{{item.value}}</text>
-        <a class='single_close'
-           data-index="{{index}}"
-           catchtap="removeTodo"
-        ><image src='/pulic/images/closered.png'></image></a>
+  <block wx:if="{{ todos.length }}">
+    <view class='todo_list'>
+      <view 
+      class="todo_list_item{{ item.completed ? ' completed' : '' }}" 
+      wx:for="{{todos}}"  
+      wx:key="index" 
+      bindtap="toggleTodoHandle" 
+      data-index="{{ index }}">
+          <icon class="checkbox"  type="{{ item.completed ? 'success' : 'circle' }}"/>
+          <text class='item-content' >{{item.value}}</text>
+          <a class='single_close'
+            data-index="{{index}}"
+            catchtap="removeTodo"
+          ><image src='/pulic/images/closered.png'></image></a>
+      </view>
     </view>
-  </view>
-  <view class='select-container'>
-    <view class='select-content'>
-      <text>All</text>
-      <text>Active</text>
-      <text>Completed</text>
+    <view class='select-container'>
+      <!-- <view class='select-content'>
+        <text  
+        class="{{status === '1' ? 'active' : ''}} filter" 
+        bindtap='showStatus'
+        data-status="1"
+        >All</text>
+        <text  
+        class="{{status === '2' ? 'active' : ''}} filter" 
+        bindtap='showStatus'
+        data-status="2"
+        >Active</text>
+        <text  
+        class="{{status === '3' ? 'active' : ''}} filter" 
+        bindtap='showStatus'
+        data-status="3"
+        >Completed</text>
+      </view> -->
+      <text 
+      class='allclose' 
+      wx:if="{{ todos.length > leftCount }}" 
+      bindtap="clearCompletedHandle">delete all</text>
     </view>
-    <text class='allclose'>删除全选</text>
-  </view>
+  </block>
+  <block wx:else>
+    <view class="empty">
+      <text class="end_title">Congratulations!🎉</text>
+      <text class="end_content">There's no more work left.👍</text>
+    </view>
+  </block>
 </view>
